@@ -43,6 +43,6 @@ def check():
     second_sp = second_sp_found
                 
 while True:
-    time.sleep(30)
+    time.sleep(60)
     check()
     
