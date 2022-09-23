@@ -17,7 +17,7 @@ class MyClient(discord.Client):
         print(f"Logged in as {self.user} (ID: {self.user.id})")
         print("------")
 
-    @tasks.loop(seconds=10)  
+    @tasks.loop(seconds=60)  
     async def my_background_task(self):
         if os.path.isfile(imagepath) :
             channel = self.get_channel(channelnum)  
