@@ -26,18 +26,21 @@ def check():
         for row in range (minwidth, maxwidth):
             color = image_rgb.getpixel((row,col))
             if color == (228, 0, 0):
-                sp_found = True
-                if row > 350:
-                    second_sp_found = True
-                if not sp:
-                    save(image_rgb)
-                    sp = True
-                    return
-                elif row > 350 and not second_sp:
-                    save(image_rgb)
-                    sp = True
-                    second_sp = True
-                    return               
+		    time.sleep(10)
+		    color = image_rgb.getpixel((row,col))
+		    if color == (228, 0, 0):
+                    sp_found = True
+                    if row > 350:
+                        second_sp_found = True
+                    if not sp:
+                        save(image_rgb)
+                        sp = True
+                        return
+                    elif row > 350 and not second_sp:
+                        save(image_rgb)
+                        sp = True
+                        second_sp = True
+                        return               
     
     sp = sp_found
     second_sp = second_sp_found
